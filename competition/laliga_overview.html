@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Liga</title>
+    <link rel="icon" type="image/png" href="..\media\headlogo.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="..\index.html">
+            <video autoplay muted>
+                <source src="..\media\finale.mp4" type="video/mp4" class="logo">
+            </video>
+        </a>
+        <div id="navi">
+            <a href="#" id="closing"><i class="far fa-times"></i></a>
+            <li><a href="..\index.html">Home</a></li>
+            <li onmouseover="toggleMenu()" onmouseout="toggleMenu()" style="position: relative;">
+                <a class="current" href="competition.html">Competitions</a>
+                <div class="wrap-sub-menu" id="menuSub">
+                  <div class="sub-menu-comp">
+                            <div class="menu-list">
+                                <img src="..\media\eplclub\epleague.png" alt="EPL">
+                              <a href="epl_overview.html">English Premier League</a>  
+                            </div>
+                            <div class="menu-list">
+                                <img src="..\media\laliga\laliga.png" alt="La liga">
+                              <a href="laliga_overview.html">La Liga </a>  
+                            </div>
+                            <div class="menu-list">
+                                <img src="..\media\bundesliga\bundesliga.png" alt="Bundesliga">
+                              <a href="bundesliga_overview.html">Bundesliga </a>  
+                            </div>
+                            <div class="menu-list">
+                                <img src="..\media\seriea\seriea.png" alt="Serie A">
+                              <a href="seriea_overview.html">Serie A </a>  
+                            </div>
+                            <div class="menu-list">
+                                <img src="..\media\ligue1\ligue1.png" alt="Ligue 1">
+                              <a href="ligue1_overview.html">Ligue 1 </a>  
+                            </div>
+                            <div class="menu-list">
+                                <img src="..\media\spl\spl.png" alt="Singapore Premier League" class="imgspec">
+                              <a href="spl_overview.html">Singapore Premier League </a>  
+                            </div>
+                        
+                    </div>
+                </div>
+            </li>
+            <li><a href="../bookticket.html">Book tickets</a></li>
+            <li><a href="../productpage/shop.html">Shop</a></li>
+            <li><a href="../bookticket.html">Book tickets</a></li>
+            <li><a href="../about_us.html">About us</a></li>
+        </div>
+        <div id="smallversion">
+            <i id="hamburger" class="fas fa-bars"></i>
+        </div>
+
+
+    </section>
+
+    <div class="league-info">
+        <img class="league-logo" src="..\media\laliga\laliga.png" alt="League Logo">
+        <div class="league-name">La Liga</div>
+    </div>
+    <h1 class="league-label">League Table</h1>
+    <div class="preview-container">
+    <div class="league-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th colspan="2">Club</th>
+                    <!-- <th>Club</th> -->
+                    <th>Played</th>
+                    <th>Won</th>
+                    <th>Drawn</th>
+                    <th>Lost</th>
+                    <th>
+                        <div class="shortform_desc" data-desc="Goals For">GF</div>
+                    </th>
+                    <th>
+                        <div class="shortform_desc" data-desc="Goals Against">GA</div>
+                    </th>
+                    <th>
+                        <div class="shortform_desc" data-desc="Goal Differences">GD</div>
+                    </th>
+                    <!-- <th>GF<div class="shortform_desc">Goals For</div></th>
+                    <th>GA<div class="shortform_desc">Goals Against</div></th>
+                    <th>GD<div class="shortform_desc">Goals Differences</div></th> -->
+                    <th>Points</th>
+                    <th>Last 5 Matches</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td id="position">pos</td>
+                <td><img src="..\media\laliga\barca.png" alt="Barca Logo"></td>
+                <td>Barcelona</td>
+                <td>38</td>
+                <td id="wins">28</td>
+                <td id="draw">4</td>
+                <td id="losses">6</td>
+                <td id="gf">70</td>
+                <td id="ga">20</td>
+                <td id="gd">gd-ga</td>
+                <td id="points">point</td>
+                <td class="last-5-matches">
+                    <div class="result-text">L</div>
+                    <div class="result-text">W</div>
+                    <div class="result-text">L</div>
+                    <div class="result-text">L</div>
+                    <div class="result-text">W</div>
+                </td>
+                <tr>
+                    <td id="position">pos</td>
+                    <td><img src="..\media\laliga\realmadrid.png" alt="Real Madrid Logo"></td>
+                    <td>Real Madrid</td>
+                    <td>38</td>
+                    <td id="wins">24</td>
+                    <td id="draw">6</td>
+                    <td id="losses">8</td>
+                    <td id="gf">75</td>
+                    <td id="ga">36</td>
+                    <td id="gd">gf-ga</td>
+                    <td id="points">point</td>
+                    <td class="last-5-matches">
+                        <div class="result-text">D</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">L</div>
+                        <div class="result-text">W</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="position">pos</td>
+                    <td><img src="..\media\laliga\atletico.png" alt="Atlético Madrid Logo"></td>
+                    <td>Atlético Madrid</td>
+                    <td>38</td>
+                    <td id="wins">23</td>
+                    <td id="draw">8</td>
+                    <td id="losses">7</td>
+                    <td id="gf">70</td>
+                    <td id="ga">33</td>
+                    <td id="gd">gf-ga</td>
+                    <td id="points">point</td>
+                    <td class="last-5-matches">
+                        <div class="result-text">D</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">D</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">L</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="position">pos</td>
+                    <td><img src="..\media\laliga\sociedad.png" alt="Real Sociedad Logo"></td>
+                    <td>Real Sociedad</td>
+                    <td>38</td>
+                    <td id="wins">21</td>
+                    <td id="draw">8</td>
+                    <td id="losses">9</td>
+                    <td id="gf">51</td>
+                    <td id="ga">35</td>
+                    <td id="gd">gf-ga</td>
+                    <td id="points">point</td>
+                    <td class="last-5-matches">
+                        <div class="result-text">W</div>
+                        <div class="result-text">L</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">D</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="position">pos</td>
+                    <td><img src="..\media\laliga\villareal.png" alt="Villarreal Logo"></td>
+                    <td>Villarreal</td>
+                    <td>38</td>
+                    <td id="wins">19</td>
+                    <td id="draw">7</td>
+                    <td id="losses">12</td>
+                    <td id="gf">59</td>
+                    <td id="ga">40</td>
+                    <td id="gd">gf-ga</td>
+                    <td id="points">point</td>
+                    <td class="last-5-matches">
+                        <div class="result-text">D</div>
+                        <div class="result-text">L</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">W</div>
+                        <div class="result-text">W</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="view-more">
+        <a href="laliga_table.html">View More</a>
+    </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item"><img src="..\media\laliga\lewandowski.png" alt="Top Scorer">
+            <p><strong>Top Scorer</strong><span><br>Robert Lewandowski (23)</span></p>
+        </div>
+        <div class="grid-item"><img src="..\media\laliga\griezmann.png" alt="Top Assist">
+            <p><strong>Top Assist</strong><span><br> Antoine Greizmann (16)</span></p>
+        </div>
+        <div class="grid-item"><img src="..\media\laliga\barca.png" alt="Team with most goals">
+            <p><strong>Team with most goals scored</strong> <span><br> Barcelona (70)</span></p>
+        </div>
+        <div class="grid-item"><img src="..\media\laliga\barca.png" alt="Team with most clean sheets">
+            <p><strong>Team with most clean sheets </strong> <span><br> Barcelona (26)</span></p>
+        </div>
+    </div>
+
+    <section id="newsletters" class="padding_default margin_default">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our <span>latest news and special offers</span> from our shop.</p>
+        </div>
+        <div id="responseMessage" class="responseMessage"></div>
+        <div class="form">
+            <input type="text" id="emailInput" placeholder="Your email address">
+            <button class="normal signupbutton" onclick="submitForm()">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="padding_default">
+        <div class="column">
+            <img class="footerlogo" src="..\media\finaleStatic.png" alt="Logo">
+            <h4>Contact</h4>
+            <p><strong>Address :&nbsp;</strong>26 Clementi Loop #01-55 Clementi Camp,<br> 129817 Singapore</p>
+            <p><strong>Phone :&nbsp;</strong>+65 88244818</p>
+            <p><strong>Hours :&nbsp;</strong>Monday to Friday: 9:00 AM - 6:00 PM <br> Saturday: 10:00 AM - 4:00 PM <br>
+                Sunday: Closed</p>
+            <div class="social">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/thefootyzoneweb/" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/thefootyzoneweb/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCy5vaT1fb6GwYk7UaGXmhDA" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <h4>About</h4>
+            <a href="about_us.html">About Us</a>
+            <a href="../privacypolicy.html">Privacy Policy</a>
+            <a href="../termsandcondition.html">Terms & Conditions</a>
+        </div>
+
+        <div class="gateway">
+            <h4>Secured Payment Gateways</h4>
+            <img src="..\media/payment-methods.png" alt="Payment Methods">
+        </div>
+
+        <div class="copyright">
+            <p> &copy; 2023, The Footy Zone</p>
+        </div>
+    </footer>
+
+    <script src=leaguecalculator.js></script>
+
+</body>
+
+</html>

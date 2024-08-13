@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Footy Zone</title>
+    <link rel="icon" type="image/png" href="..\media\headlogo.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="..\index.html">
+            <video autoplay muted>
+                <source src="..\media\finale.mp4" type="video/mp4" class="logo">
+            </video>
+        </a>
+        <div id="navi">
+            <a href="#" id="closing"><i class="far fa-times"></i></a>
+            <li><a href="..\index.html">Home</a></li>
+            <li onmouseover="toggleMenu()" onmouseout="toggleMenu()" style="position: relative;">
+                <a class="current" href="../competition/competition.html">Competitions</a>
+                <div class="wrap-sub-menu" id="menuSub">
+                    <div class="sub-menu-comp">
+                        <div class="menu-list">
+                            <img src="../media/eplclub/epleague.png" alt="EPL">
+                            <a href="../competition/epl_overview.html">English Premier League</a>
+                        </div>
+                        <div class="menu-list">
+                            <img src="../media/laliga/laliga.png" alt="La liga">
+                            <a href="../competition/laliga_overview.html">La Liga</a>
+                        </div>
+                        <div class="menu-list">
+                            <img src="../media/bundesliga/bundesliga.png" alt="Bundesliga">
+                            <a href="../competition/bundesliga_overview.html">Bundesliga</a>
+                        </div>
+                        <div class="menu-list">
+                            <img src="../media/seriea/seriea.png" alt="Serie A">
+                            <a href="../competition/seriea_overview.html">Serie A</a>
+                        </div>
+                        <div class="menu-list">
+                            <img src="../media/ligue1/ligue1.png" alt="Ligue 1">
+                            <a href="../competition/ligue1_overview.html">Ligue 1</a>
+                        </div>
+                        <div class="menu-list">
+                            <img src="../media/spl/spl.png" alt="Singapore Premier League" class="imgspec">
+                            <a href="../competition/spl_overview.html">Singapore Premier League</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../bookticket.html">Book tickets</a></li>
+            <li><a href="../productpage/shop.html">Shop</a></li>
+            <li><a href="../news/news.html">News</a></li>
+            <li><a href="../about_us.html">About us</a></li>
+        </div>
+        <div id="smallversion">
+            <i id="hamburger" class="fas fa-bars"></i>
+        </div>
+    </section>
+    <h2 class="cart-item">Payment</h2>
+    <form id="checkoutForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+
+        <label for="address">Delivery Address:</label>
+        <input type="address" id="address" name="address" required><br>
+
+
+        <span id="totalAmount">Loading...</span>
+        <p id="delvchar">(including delivery charges)</p>
+
+        <label>Payment Method:</label>
+        <div class="payment-option">
+            <input type="radio" id="paypal" name="paymentMethod" value="paypal" required>
+            <label for="paypal">PayPal</label>
+        </div>
+        <div class="payment-option">
+            <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" required>
+            <label for="creditCard">Credit/Debit Card</label>
+        </div>
+        <div class="payment-option">
+            <input type="radio" id="bankTransaction" name="paymentMethod" value="bankTransaction" required>
+            <label for="bankTransaction">Bank Transaction</label>
+        </div>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+    <div id="message" style="display: none; text-align: center; margin-top: 20px; margin-bottom:30px; font-weight: bold;">Thank you for your
+        order! Your order is
+        being processed...</div>
+
+    <script>
+        const burger = document.getElementById('hamburger');
+        const closing = document.getElementById('closing');
+        const navinf = document.getElementById('navi');
+
+        if (burger) {
+            burger.addEventListener('click', () => {
+                navinf.classList.add('opennav');
+            })
+        }
+
+        if (closing) {
+            closing.addEventListener('click', () => {
+                navinf.classList.remove('opennav');
+            })
+        }
+
+
+
+        // Retrieve cart item information from localStorage
+        const cartItemData = JSON.parse(localStorage.getItem("checkoutData"));
+        console.log(cartItemData);
+        // This will log the cart item information to the console for testing purposes
+
+        // Get the form element
+        const checkoutForm = document.getElementById("checkoutForm");
+        const totalAmountSpan = document.getElementById("totalAmount");
+        const messageElement = document.getElementById("message");
+
+        // Update the total amount span with the total amount from cartItemData
+        function updateTotalAmount() {
+            const totalAmount = parseFloat(cartItemData.totalPrice) + 10;// 10 dollars for delivery charges
+            console.log(totalAmount);
+            totalAmountSpan.textContent = "S$" + totalAmount.toFixed(2);
+        }
+
+        updateTotalAmount();
+
+        checkoutForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting and page refreshing
+
+            // Retrieve user input from the form fields
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+
+            // Perform any validation if needed
+            // For example, check if the email is valid, phone number format is correct, etc.
+
+            // Now, you can use the name, email, phone, and cartItemData to process the order
+            // For example, you can send this data to a server for further processing, save it in a database, etc.
+            console.log("Name: " + name);
+            console.log("Email: " + email);
+            console.log("Phone: " + phone);
+            console.log("Cart Item Data: ", cartItemData);
+
+
+            // After processing the order, you may want to clear the cartItemData from localStorage
+            localStorage.removeItem("checkoutData");
+
+            const checkoutForm = document.getElementById("checkoutForm");
+            checkoutForm.reset();
+
+            messageElement.style.display = "block";
+
+        });
+
+        function toggleMenu() {
+            const menuSub = document.getElementById("menuSub");
+            menuSub.classList.toggle("opening-menu");
+        }
+    </script>
+</body>
+
+</html>
