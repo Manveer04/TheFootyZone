@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Footy Zone</title>
+  <link rel="icon" type="image/png" href="media\headlogo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+  <section id="header">
+    <a href="index.html">
+      <video autoplay muted>
+        <source src="media\finale.mp4" type="video/mp4" class="logo">
+      </video>
+    </a>
+    <div id="navi">
+      <a href="#" id="closing"><i class="far fa-times"></i></a>
+      <li><a href="index.html">Home</a></li>
+      <li onmouseover="toggleMenu()" onmouseout="toggleMenu()" style="position: relative;">
+        <a  href="competition/competition.html">Competitions</a>
+        <div class="wrap-sub-menu" id="menuSub">
+          <div class="sub-menu-comp">
+            <div class="menu-list">
+              <img src="media/eplclub/epleague.png" alt="EPL">
+              <a href="competition/epl_overview.html">English Premier League</a>
+            </div>
+            <div class="menu-list">
+              <img src="media/laliga/laliga.png" alt="La liga">
+              <a href="competition/laliga_overview.html">La Liga</a>
+            </div>
+            <div class="menu-list">
+              <img src="media/bundesliga/bundesliga.png" alt="Bundesliga">
+              <a href="competition/bundesliga_overview.html">Bundesliga</a>
+            </div>
+            <div class="menu-list">
+              <img src="media/seriea/seriea.png" alt="Serie A">
+              <a href="competition/seriea_overview.html">Serie A</a>
+            </div>
+            <div class="menu-list">
+              <img src="media/ligue1/ligue1.png" alt="Ligue 1">
+              <a href="competition/ligue1_overview.html">Ligue 1</a>
+            </div>
+            <div class="menu-list">
+              <img src="media/spl/spl.png" alt="Singapore Premier League" class="imgspec">
+              <a href="competition/spl_overview.html">Singapore Premier League</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a class="current" href="bookticket.html">Book tickets</a></li>
+      <li><a href="productpage/shop.html">Shop</a></li>
+            <li><a href="news/news.html">News</a></li>
+            <li><a href="about_us.html">About us</a></li>
+    </div>
+    <div id="smallversion">
+      <i id="hamburger" class="fas fa-bars"></i>
+  </div>
+
+  </section>
+  <div class="event-item">
+    <h2>Your Cart</h2>
+    <table>
+      <tr>
+        <td class="eventitle">Product Name</td>
+        <td class="product-price">$Price</td>
+        <td class="product-size">
+          <select class="ticket-type-select" onchange="updateTotalPrice()">
+            <option value="standard">Standard</option>
+            <option value="senior">Senior Citizen (Age 60 and above)</option>
+            <option value="child">Child (3-16 years)</option>
+          </select>
+        <td><img src="" alt="Product Image" class="eventimg"></td>
+        <td><input type="number" value="1" id="quantityInput" oninput="updateTotalPrice()" min="1" max=5></td>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><strong>Total:</strong></td>
+        <td class="totalPrice">0</td>
+      </tr>
+    </table>
+    <button id="checkoutBtn">Checkout</button>
+  </div>
+  <section id="newsletters" class="padding_default margin_default">
+    <div class="newstext">
+      <h4>Sign Up For Newsletters</h4>
+      <p>Get E-mail updates about our <span>latest news and special offers</span> from our shop.</p>
+    </div>
+    <div id="responseMessage" class="responseMessage"></div>
+    <div class="form">
+      <input type="text" id="emailInput" placeholder="Your email address">
+      <button class="normal signupbutton" onclick="submitForm()">Sign Up</button>
+    </div>
+  </section>
+
+  <footer class="padding_default">
+    <div class="column">
+      <img class="footerlogo" src="media\finaleStatic.png" alt="Logo">
+      <h4>Contact</h4>
+      <p><strong>Address :&nbsp;</strong>26 Clementi Loop #01-55 Clementi Camp,<br> 129817 Singapore</p>
+      <p><strong>Phone :&nbsp;</strong>+65 88244818</p>
+      <p><strong>Hours :&nbsp;</strong>Monday to Friday: 9:00 AM - 6:00 PM <br> Saturday: 10:00 AM - 4:00 PM <br>
+        Sunday: Closed</p>
+      <div class="social">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <a href="https://www.facebook.com/thefootyzoneweb/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/thefootyzoneweb/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCy5vaT1fb6GwYk7UaGXmhDA" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <h4>About</h4>
+      <a href="about_us.html">About Us</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="termsandcondition.html">Terms & Conditions</a>
+    </div>
+    <div class="gateway">
+      <h4>Secured Payment Gateways</h4>
+      <img src="media/payment-methods.png" alt="Payment Methods">
+    </div>
+
+    <div class="copyright">
+      <p> &copy; 2023, The Footy Zone</p>
+    </div>
+  </footer>
+
+</body>
+<script>
+
+const burger = document.getElementById('hamburger');
+const closing = document.getElementById('closing');
+const navinf = document.getElementById('navi');
+
+if (burger){
+    burger.addEventListener('click', () =>{
+        navinf.classList.add('opennav');
+    })
+}
+
+if (closing){
+    closing.addEventListener('click', () =>{
+        navinf.classList.remove('opennav');
+    })
+}
+
+let cartItemData = JSON.parse(localStorage.getItem("eventCartItem"));
+  console.log(cartItemData);
+
+  let cartItemContainer; // Define cartItemContainer as a global variable
+  let totalPriceElement;
+
+  // Retrieve and display cart item data on the view cart page
+  if (cartItemData) {
+    cartItemContainer = document.querySelector(".event-item"); // Assign the value here
+    let productNameElement = cartItemContainer.querySelector(".eventitle");
+    let productPriceElement = cartItemContainer.querySelector(".product-price");
+    let productImageElement = cartItemContainer.querySelector(".eventimg");
+    let quantityInput = cartItemContainer.querySelector("#quantityInput");
+    totalPriceElement = cartItemContainer.querySelector(".totalPrice"); // Remove the 'let' keyword here
+
+    productNameElement.textContent = cartItemData.name;
+    productPriceElement.textContent = '$' + cartItemData.price; // Use '$' to display the price
+    productImageElement.src = cartItemData.image;
+    totalPriceElement.textContent = 'S$' + cartItemData.totalPrice;
+  }
+
+
+
+
+  function updateTotalPrice() {
+  let quantityInput = cartItemContainer.querySelector("#quantityInput");
+  let quantity = parseInt(quantityInput.value);
+  let selectedOption = cartItemContainer.querySelector(".ticket-type-select").value;
+  let price;
+  let counter;
+
+  if (quantity > 5) {
+    quantityInput.value = 5;
+  } 
+
+  // Also, ensure that the entered value is not less than the minimum (1)
+  if (quantity < 1) {
+    quantityInput.value = 1;
+  }
+
+
+  // Set the price based on the selected option
+  if (selectedOption === "standard") {
+    price = 15;
+  } else if (selectedOption === "senior") {
+    // Set the price for senior citizens
+    price = 8;
+  } else if (selectedOption === "child") {
+    // Set the price for children
+    price = 8;
+  } else {
+    // Default to standard price if no valid option is selected
+    price = NaN;
+  }
+
+  // Update the product price in the cart table
+  let productPriceElement = cartItemContainer.querySelector(".product-price");
+  productPriceElement.textContent = '$' + price;
+
+  let total = quantity * price;
+  let formattedTotal = total.toFixed(2);
+
+  if (totalPriceElement) {
+    totalPriceElement.textContent = '$' + formattedTotal;
+  }
+
+  // Update cartItemData.totalPrice
+  cartItemData.totalPrice = formattedTotal;
+
+  return formattedTotal;
+}
+
+
+
+  // Add event listener to the ticket-type-select dropdown
+  const ticketTypeSelect = cartItemContainer.querySelector(".ticket-type-select");
+  ticketTypeSelect.addEventListener("change", updateTotalPrice);
+
+  // Initial calculation of total price
+  if (cartItemData) {
+    cartItemData.totalPrice = updateTotalPrice();
+  }
+
+  function checkout() {
+    // Assuming you have cartItemData as the object containing the necessary cart item information
+    if (cartItemData) {
+      // Store cartItemData in localStorage to be accessed on the checkout page
+      localStorage.setItem("ticketcheckoutData", JSON.stringify(cartItemData));
+    }
+    // Redirect the user to the checkout page
+    window.location.href = "ticketpayment.html";
+  }
+
+  // Add a click event listener to the Checkout button
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  checkoutBtn.addEventListener("click", checkout);
+
+  function toggleMenu() {
+    const menuSub = document.getElementById("menuSub");
+    menuSub.classList.toggle("opening-menu");
+  }
+
+  function validateEmail(email) {
+    // Simple email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+function submitForm() {
+    const emailInput = document.getElementById("emailInput");
+    const responseMessage = document.getElementById("responseMessage");
+
+    const email = emailInput.value.trim();
+
+    if (!email) {
+        responseMessage.innerHTML = "Please enter your email address.";
+        responseMessage.style.color = "red";
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        responseMessage.innerHTML = "Please enter a valid email address.";
+        responseMessage.style.color = "red";
+        return;
+    }
+
+    console.log("Email:", email);
+
+    responseMessage.innerHTML = "<strong>Thank you for signing up!</strong> <br> You will receive our newsletters.";
+    responseMessage.style.color = "white";
+    emailInput.value = ""; // Clear the input field
+  }
+</script>
+
+</html>
