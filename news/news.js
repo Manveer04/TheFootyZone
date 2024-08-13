@@ -98,7 +98,7 @@ function createNewsCard(news) {
             <img class="eventimg" src="${news.imageSrc}" alt="${news.imageAlt}">
             <h2 class="eventitle">${news.title}</h2>
             <p>${news.short_desc}</p>
-            <a class="book-ticket-button" href="newsPage.html?id=${news.newsId}">Read More</a>
+            <a class="book-ticket-button" href="newspage.html?id=${news.newsId}">Read More</a>
         </div>
     `;
 
