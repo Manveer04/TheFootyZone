@@ -198,9 +198,6 @@ TheFootyZone/
 - [Instagram](https://www.instagram.com/thefootyzoneweb/)
 - [YouTube](https://www.youtube.com/channel/UCy5vaT1fb6GwYk7UaGXmhDA)
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🎉 Acknowledgments
 
